@@ -9,8 +9,9 @@ function Formulario({
   labelPass,
   setError,
   error,
-  setEye,
 }) {
+  
+  // funcion para mostrar o ocultar pass
   function mostrarPass() {
     let inputPass = document.getElementById("boton-password");
 
@@ -19,6 +20,7 @@ function Formulario({
       : (inputPass.type = "password");
   }
 
+  // condicion para mostrar o no boton
   if (pass == 252525) {
     setError(false);
   } else if (pass < 252525 || pass > 252525) {

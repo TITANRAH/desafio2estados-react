@@ -1,5 +1,4 @@
 function BotonForm() {
-
   return (
     <>
       <div className="col boton">
@@ -8,5 +7,4 @@ function BotonForm() {
     </>
   );
 }
-
 export default BotonForm;

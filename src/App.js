@@ -23,8 +23,7 @@ function App() {
           pass={pass}
           setPass={setPass}
           error={error}
-          setError={setError}
-         
+          setError={setError}     
         />
       </div>
     </>

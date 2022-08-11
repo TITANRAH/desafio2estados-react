@@ -1,40 +1,46 @@
-import { useState } from "react";
 import BotonForm from "./BotonForm";
 
-function Formulario({ estadoNombre, estadoPass, labelName, labelPass }) {
+function Formulario({
+  name,
+  setName,
+  pass,
+  setPass,
+  labelName,
+  labelPass,
+  setError,
+  error,
+}) {
 
-  // stateInputs
-  const [nombre, setNombre] = useState(estadoNombre);
-  const [pass, setPass] = useState(estadoPass);
 
-  // codigo show boton 
-  const showBotonCode = 252525;
-
-  // functions
-  function validarPass(event) {
-    event.preventDefault();
-    setPass(event.target.value);
+  
+  if (pass == 252525) {
+    setError(false);
+  } else if (pass < 252525 || pass > 252525) {
+    setError(true);
   }
 
-  function validarNombre(event) {
-
-    event.preventDefault();   
-    setNombre(event.target.value);
-  }
-
-  // return html
   return (
     <>
       <div className="col">
         <label>{labelName}</label>
-        <input className="form-control" type="text" onChange={validarNombre} />
+        <input
+          className="form-control"
+          type="text"
+          onChange={(event) => setName(event.target.value)}
+          value={name}
+        />
       </div>
       <div className="col">
         <label>{labelPass}</label>
-        <input className="form-control" type="number" onChange={validarPass} />
+        <input
+          className="form-control"
+          type="number"
+          onChange={(event) => setPass(event.target.value)}
+          value={pass}
+        />
       </div>
 
-      <div>{pass == showBotonCode ? <BotonForm/> : null}</div>
+      <div>{!error ? <BotonForm /> : null}</div>
     </>
   );
 }

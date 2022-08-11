@@ -10,3 +10,16 @@
   gap: 1rem;
 
 }
+
+.password-icon {
+ 
+  top:  -0.1rem;
+  left: 95%;
+  color: blue;
+  margin: auto;
+  font-size: 1.5em;
+  float: left;
+  position: relative;
+  margin: -2.2rem 9px 0 0;
+  cursor: pointer;
+}
